@@ -1,0 +1,92 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 25% 96%; /* Light Grayish Blue - very light */
+    --foreground: 220 20% 10%; /* Dark Slate Gray - for text */
+
+    --card: 220 30% 100%; /* White */
+    --card-foreground: 220 20% 10%;
+
+    --popover: 220 30% 100%;
+    --popover-foreground: 220 20% 10%;
+
+    --primary: 205 70% 50%; /* A calm, medium blue for primary actions */
+    --primary-foreground: 210 40% 98%; /* Almost White for text on primary */
+    
+    --secondary: 220 15% 90%; /* Light gray for secondary elements */
+    --secondary-foreground: 205 70% 40%; /* Darker blue for text on secondary */
+
+    --muted: 220 15% 85%; /* Slightly darker gray for muted elements */
+    --muted-foreground: 220 10% 45%; /* Medium gray for muted text */
+
+    --accent: 30 90% 55%; /* A warm, inviting orange as an accent */
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 70% 55%; /* A clear, noticeable red */
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 20% 88%; /* Light gray border */
+    --input: 220 20% 90%; /* Slightly darker input background */
+    --ring: 205 70% 50%; /* Primary color for rings */
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    /* Example dark theme - can be adjusted if requested */
+    --background: 220 20% 6%;
+    --foreground: 210 40% 98%;
+    --card: 220 20% 9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 220 20% 6%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 205 65% 55%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 220 15% 18%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 220 15% 18%;
+    --muted-foreground: 220 10% 65%;
+    --accent: 30 85% 60%;
+    --accent-foreground: 220 20% 10%;
+    --destructive: 0 60% 50%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 220 20% 12%;
+    --input: 220 20% 12%;
+    --ring: 205 65% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    font-family: 'Inter', sans-serif; /* A clean, modern font */
+  }
+}
+
+/* Custom scrollbar for WebKit browsers */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted));
+  border-radius: 10px;
+  border: 2px solid hsl(var(--background));
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--secondary-foreground));
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
